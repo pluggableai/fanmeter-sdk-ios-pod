@@ -1,0 +1,51 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name fanmeter_sdk_ios
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+import CoreMotion
+import CoreTelephony
+import CryptoKit
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import UserNotifications
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import fanmeter_sdk_ios
+import os
+@_hasMissingDesignatedInitializers public class EntryPoint {
+  public class func execute(externalUserId: Swift.String, externalTokenId: Swift.String, notificationData: [Swift.AnyHashable : Any], externalUserEmail: Swift.String?, ticketNumber: Swift.String?, stand: Swift.String?, log: Swift.Bool?) -> Swift.String
+  public class func notificationClicked(action: Swift.String, notificationData: [Swift.AnyHashable : Any], log: Swift.Bool?)
+  public class func startService(companyName: Swift.String, licenseKey: Swift.String, eventTitle: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String?, ticketNumber: Swift.String?, stand: Swift.String?, log: Swift.Bool?, callback: ((Swift.Int) -> ())? = nil)
+  public class func stopService(log: Swift.Bool?, callback: ((Swift.Int) -> ())? = nil)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PluggableAppDelegateExtension : ObjectiveC.NSObject, UIKit.UIApplicationDelegate {
+  @_Concurrency.MainActor(unsafe) public func requestNotificationPermission()
+  @_Concurrency.MainActor(unsafe) @objc public func application(_ application: UIKit.UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Foundation.Data)
+  @_Concurrency.MainActor(unsafe) @objc public func application(_ application: UIKit.UIApplication, didFailToRegisterForRemoteNotificationsWithError error: any Swift.Error)
+  #if compiler(>=5.3) && $AsyncAwait
+  @_Concurrency.MainActor(unsafe) @objc public func application(_ application: UIKit.UIApplication, didReceiveRemoteNotification userInfo: [Swift.AnyHashable : Any]) async -> UIKit.UIBackgroundFetchResult
+  #endif
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SensorFeedHandler : ObjectiveC.NSObject, CoreLocation.CLLocationManagerDelegate {
+  public static var shared: fanmeter_sdk_ios.SensorFeedHandler
+  @objc override dynamic public init()
+  @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
+  @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc public func locationManagerDidPauseLocationUpdates(_ manager: CoreLocation.CLLocationManager)
+  @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class PluggableNotificationExtension : ObjectiveC.NSObject, UserNotifications.UNUserNotificationCenterDelegate {
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}

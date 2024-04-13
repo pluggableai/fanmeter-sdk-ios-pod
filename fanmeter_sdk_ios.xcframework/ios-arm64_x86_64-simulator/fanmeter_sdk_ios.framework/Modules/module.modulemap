@@ -1,0 +1,11 @@
+framework module fanmeter_sdk_ios {
+  umbrella header "fanmeter_sdk_ios.h"
+  export *
+
+  module * { export * }
+}
+
+module fanmeter_sdk_ios.Swift {
+  header "fanmeter_sdk_ios-Swift.h"
+  requires objc
+}
