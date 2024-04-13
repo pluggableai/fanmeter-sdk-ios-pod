@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
 
   spec.version      = "1.0.8"
   spec.license      = { :type => 'Custom', :file => 'pod-fanmeter-sdk-ios-1.0.8/LICENSE' }
-  spec.source       = { :http => 'https://github.com/pluggableai/pod-fanmeter-sdk-ios/archive/refs/tags/1.0.8.zip' }
+  spec.source       = { :http => 'https://github.com/pluggableai/fanmeter-sdk-ios-pod/archive/refs/tags/1.0.8.zip' }
   spec.vendored_frameworks = 'pod-fanmeter-sdk-ios-1.0.8/fanmeter_sdk_ios.xcframework'
 
   spec.requires_arc = true
