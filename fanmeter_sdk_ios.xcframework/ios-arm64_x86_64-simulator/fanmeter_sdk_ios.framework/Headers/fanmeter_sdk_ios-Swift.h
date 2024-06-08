@@ -308,38 +308,46 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// The SDK entrypoint for Objective-C calls.
 SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 @interface EntryPointBridge : NSObject
-/// API async entry point to launch the SDK from Objective-C.
-/// @param externalUserId the id of the user to start the service.
-/// @param externalTokenId an additional identifier of the user (should be the FCM Token if user is to receive push notifications).
+/// API async entry point to launch the SDK.
+/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
+/// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
 /// @param notificationData a map containing data coming from the notification.
-/// @param externalUserEmail the email of the user participating in the event (optional).
-/// @param ticketNumber the number of the ticket of the user participating in the event (optional).
-/// @param stand the stand where the user participating in the event is (optional).
+/// @param externalUserEmail the user’s email (optional).
+/// @param fcmToken the FCM token id (optional).
+/// @param ticketNumber the ticket number of the user (optional).
+/// @param ticketStand the stand where the given user is (optional).
 /// @param log enable additional logging (optional).
-/// @return a success or error code.
-+ (NSString * _Nonnull)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail ticketNumber:(NSString * _Nullable)ticketNumber stand:(NSString * _Nullable)stand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
+/// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
+/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
+/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
+/// -96: Failed to get event details; -97: Failed to start background service;
++ (NSString * _Nonnull)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
 /// API async entry point to launch the SDK when the notification is clicked from Objective-C.
 /// @param action the action of the user (clicked the notification, accept notification, or reject notification) .
 /// @param notificationData a map containing data coming from the notification.
 /// @param log enable additional logging (optional).
 + (void)notificationClickedWithAction:(NSString * _Nonnull)action notificationData:(NSDictionary * _Nonnull)notificationData log:(NSNumber * _Nullable)log;
-/// Enables sensor data collection for a specific [externalUserId] at an event with a given [eventTitle] from Objective-C.
+/// Enables sensor data collection for a specific [externalUserId] at an event with a given [eventTitle].
 /// @param companyName the name of the company requesting to start the service.
 /// @param licenseKey the license key of the company requesting to start the service.
 /// @param eventTitle the event name.
-/// @param externalUserId the id of the user to start the service.
-/// @param externalTokenId an additional identifier of the user (should be the FCM Token if user is to receive push notifications).
-/// @param externalUserEmail the email of the user participating in the event (optional).
-/// @param ticketNumber the number of the ticket of the user participating in the event (optional).
-/// @param stand the stand where the user participating in the event is (optional).
+/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
+/// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
+/// @param externalUserEmail the user’s email (optional).
+/// @param fcmToken the FCM token id (optional).
+/// @param ticketNumber the ticket number of the user (optional).
+/// @param ticketStand the stand where the given user is (optional).
 /// @param log enable additional logging (optional).
 /// @param callback the callback where the results are returned (optional).
-/// @return callback returns: ‘1’ - SUCCESS;  ‘-94’ - Invalid event dates; ‘-95’ - [userId] or [fcmToken] are empty strings; ‘-96’ - Failed to get event details
-+ (void)startServiceWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey eventTitle:(NSString * _Nonnull)eventTitle externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail ticketNumber:(NSString * _Nullable)ticketNumber stand:(NSString * _Nullable)stand log:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
-/// Disables sensor data collection for an user at a specific event from Objective-C.
+/// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
+/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
+/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
+/// -96: Failed to get event details; -97: Failed to start background service;
++ (void)startServiceWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey eventTitle:(NSString * _Nonnull)eventTitle externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
+/// Disables sensor data collection for an user at a specific event.
 /// @param log enable additional logging (optional).
 /// @param callback the callback where the results are returned (optional).
-/// @return callback returns ‘1’ if SUCCESS.
+/// @return callback returns ‘1’ if SUCCESS otherwise an error code.
 + (void)stopServiceWithLog:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -709,38 +717,46 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// The SDK entrypoint for Objective-C calls.
 SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 @interface EntryPointBridge : NSObject
-/// API async entry point to launch the SDK from Objective-C.
-/// @param externalUserId the id of the user to start the service.
-/// @param externalTokenId an additional identifier of the user (should be the FCM Token if user is to receive push notifications).
+/// API async entry point to launch the SDK.
+/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
+/// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
 /// @param notificationData a map containing data coming from the notification.
-/// @param externalUserEmail the email of the user participating in the event (optional).
-/// @param ticketNumber the number of the ticket of the user participating in the event (optional).
-/// @param stand the stand where the user participating in the event is (optional).
+/// @param externalUserEmail the user’s email (optional).
+/// @param fcmToken the FCM token id (optional).
+/// @param ticketNumber the ticket number of the user (optional).
+/// @param ticketStand the stand where the given user is (optional).
 /// @param log enable additional logging (optional).
-/// @return a success or error code.
-+ (NSString * _Nonnull)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail ticketNumber:(NSString * _Nullable)ticketNumber stand:(NSString * _Nullable)stand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
+/// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
+/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
+/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
+/// -96: Failed to get event details; -97: Failed to start background service;
++ (NSString * _Nonnull)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
 /// API async entry point to launch the SDK when the notification is clicked from Objective-C.
 /// @param action the action of the user (clicked the notification, accept notification, or reject notification) .
 /// @param notificationData a map containing data coming from the notification.
 /// @param log enable additional logging (optional).
 + (void)notificationClickedWithAction:(NSString * _Nonnull)action notificationData:(NSDictionary * _Nonnull)notificationData log:(NSNumber * _Nullable)log;
-/// Enables sensor data collection for a specific [externalUserId] at an event with a given [eventTitle] from Objective-C.
+/// Enables sensor data collection for a specific [externalUserId] at an event with a given [eventTitle].
 /// @param companyName the name of the company requesting to start the service.
 /// @param licenseKey the license key of the company requesting to start the service.
 /// @param eventTitle the event name.
-/// @param externalUserId the id of the user to start the service.
-/// @param externalTokenId an additional identifier of the user (should be the FCM Token if user is to receive push notifications).
-/// @param externalUserEmail the email of the user participating in the event (optional).
-/// @param ticketNumber the number of the ticket of the user participating in the event (optional).
-/// @param stand the stand where the user participating in the event is (optional).
+/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
+/// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
+/// @param externalUserEmail the user’s email (optional).
+/// @param fcmToken the FCM token id (optional).
+/// @param ticketNumber the ticket number of the user (optional).
+/// @param ticketStand the stand where the given user is (optional).
 /// @param log enable additional logging (optional).
 /// @param callback the callback where the results are returned (optional).
-/// @return callback returns: ‘1’ - SUCCESS;  ‘-94’ - Invalid event dates; ‘-95’ - [userId] or [fcmToken] are empty strings; ‘-96’ - Failed to get event details
-+ (void)startServiceWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey eventTitle:(NSString * _Nonnull)eventTitle externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail ticketNumber:(NSString * _Nullable)ticketNumber stand:(NSString * _Nullable)stand log:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
-/// Disables sensor data collection for an user at a specific event from Objective-C.
+/// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
+/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
+/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
+/// -96: Failed to get event details; -97: Failed to start background service;
++ (void)startServiceWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey eventTitle:(NSString * _Nonnull)eventTitle externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
+/// Disables sensor data collection for an user at a specific event.
 /// @param log enable additional logging (optional).
 /// @param callback the callback where the results are returned (optional).
-/// @return callback returns ‘1’ if SUCCESS.
+/// @return callback returns ‘1’ if SUCCESS otherwise an error code.
 + (void)stopServiceWithLog:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
