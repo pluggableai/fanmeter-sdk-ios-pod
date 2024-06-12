@@ -384,6 +384,8 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios17SensorFeedHandler")
 /// Location Delegate - Tells the delegate its authorization status when the app creates the location manager and when the authorization status changes.
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 /// Location Delegate - Tells the delegate that new location data is available.
+/// Note that if only approximate location permission was given, this will take much longer to be called (several minutes).
+/// If exact location permission was given, this updates within seconds.
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
 /// Location Delegate - Tells the delegate that location updates were paused (OS does this to save power).
 /// After a pause occurs, it is our responsibility to restart location services again at an appropriate time.
@@ -793,6 +795,8 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios17SensorFeedHandler")
 /// Location Delegate - Tells the delegate its authorization status when the app creates the location manager and when the authorization status changes.
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 /// Location Delegate - Tells the delegate that new location data is available.
+/// Note that if only approximate location permission was given, this will take much longer to be called (several minutes).
+/// If exact location permission was given, this updates within seconds.
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
 /// Location Delegate - Tells the delegate that location updates were paused (OS does this to save power).
 /// After a pause occurs, it is our responsibility to restart location services again at an appropriate time.
