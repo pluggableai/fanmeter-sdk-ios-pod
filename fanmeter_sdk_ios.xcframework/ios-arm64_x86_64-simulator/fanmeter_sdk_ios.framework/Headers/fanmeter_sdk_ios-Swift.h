@@ -327,6 +327,10 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// @param notificationData a map containing data coming from the notification.
 /// @param log enable additional logging (optional).
 + (void)notificationClickedWithAction:(NSString * _Nonnull)action notificationData:(NSDictionary * _Nonnull)notificationData log:(NSNumber * _Nullable)log;
+/// API sync entry point to check if the SDK has its service running.
+/// @param callback the callback where the results are returned (optional).
+/// @return callback returns true (1), if service is running; false (0), if it is not running.
++ (void)isServiceRunningWithCallback:(SWIFT_NOESCAPE void (^ _Nonnull)(NSInteger))callback;
 /// Enables sensor data collection for a specific [externalUserId] at an event with a given [eventTitle].
 /// @param companyName the name of the company requesting to start the service.
 /// @param licenseKey the license key of the company requesting to start the service.
@@ -738,6 +742,10 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// @param notificationData a map containing data coming from the notification.
 /// @param log enable additional logging (optional).
 + (void)notificationClickedWithAction:(NSString * _Nonnull)action notificationData:(NSDictionary * _Nonnull)notificationData log:(NSNumber * _Nullable)log;
+/// API sync entry point to check if the SDK has its service running.
+/// @param callback the callback where the results are returned (optional).
+/// @return callback returns true (1), if service is running; false (0), if it is not running.
++ (void)isServiceRunningWithCallback:(SWIFT_NOESCAPE void (^ _Nonnull)(NSInteger))callback;
 /// Enables sensor data collection for a specific [externalUserId] at an event with a given [eventTitle].
 /// @param companyName the name of the company requesting to start the service.
 /// @param licenseKey the license key of the company requesting to start the service.
