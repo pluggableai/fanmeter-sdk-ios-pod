@@ -280,8 +280,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
-@import UIKit;
-@import UserNotifications;
 #endif
 
 #endif
@@ -308,7 +306,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// The SDK entrypoint for Objective-C calls.
 SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 @interface EntryPointBridge : NSObject
-/// API async entry point to launch the SDK.
+/// API async entry point to launch the SDK when the notification is clicked from Objective-C.
 /// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
 /// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
 /// @param notificationData a map containing data coming from the notification.
@@ -322,11 +320,6 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
 /// -96: Failed to get event details; -97: Failed to start background service;
 + (NSString * _Nonnull)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
-/// API async entry point to launch the SDK when the notification is clicked from Objective-C.
-/// @param action the action of the user (clicked the notification, accept notification, or reject notification) .
-/// @param notificationData a map containing data coming from the notification.
-/// @param log enable additional logging (optional).
-+ (void)notificationClickedWithAction:(NSString * _Nonnull)action notificationData:(NSDictionary * _Nonnull)notificationData log:(NSNumber * _Nullable)log;
 /// API sync entry point to check if the SDK has its service running.
 /// @param callback the callback where the results are returned (optional).
 /// @return callback returns true (1), if service is running; false (0), if it is not running.
@@ -356,28 +349,6 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIApplication;
-@class NSData;
-
-SWIFT_CLASS("_TtC16fanmeter_sdk_ios29PluggableAppDelegateExtension")
-@interface PluggableAppDelegateExtension : NSObject <UIApplicationDelegate>
-- (void)application:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
-- (void)application:(UIApplication * _Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
-- (void)application:(UIApplication * _Nonnull)application didReceiveRemoteNotification:(NSDictionary * _Nonnull)userInfo fetchCompletionHandler:(void (^ _Nonnull)(UIBackgroundFetchResult))completionHandler;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class UNUserNotificationCenter;
-@class UNNotification;
-@class UNNotificationResponse;
-
-SWIFT_CLASS("_TtC16fanmeter_sdk_ios30PluggableNotificationExtension")
-@interface PluggableNotificationExtension : NSObject <UNUserNotificationCenterDelegate>
-- (void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center willPresentNotification:(UNNotification * _Nonnull)notification withCompletionHandler:(void (^ _Nonnull)(UNNotificationPresentationOptions))completionHandler;
-- (void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response withCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class CLLocationManager;
 @class CLLocation;
 
@@ -397,7 +368,6 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios17SensorFeedHandler")
 /// Location Delegate - Tells the delegate that the location manager was unable to retrieve a location value.
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 @end
-
 
 
 
@@ -695,8 +665,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
-@import UIKit;
-@import UserNotifications;
 #endif
 
 #endif
@@ -723,7 +691,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// The SDK entrypoint for Objective-C calls.
 SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 @interface EntryPointBridge : NSObject
-/// API async entry point to launch the SDK.
+/// API async entry point to launch the SDK when the notification is clicked from Objective-C.
 /// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
 /// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
 /// @param notificationData a map containing data coming from the notification.
@@ -737,11 +705,6 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
 /// -96: Failed to get event details; -97: Failed to start background service;
 + (NSString * _Nonnull)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
-/// API async entry point to launch the SDK when the notification is clicked from Objective-C.
-/// @param action the action of the user (clicked the notification, accept notification, or reject notification) .
-/// @param notificationData a map containing data coming from the notification.
-/// @param log enable additional logging (optional).
-+ (void)notificationClickedWithAction:(NSString * _Nonnull)action notificationData:(NSDictionary * _Nonnull)notificationData log:(NSNumber * _Nullable)log;
 /// API sync entry point to check if the SDK has its service running.
 /// @param callback the callback where the results are returned (optional).
 /// @return callback returns true (1), if service is running; false (0), if it is not running.
@@ -771,28 +734,6 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIApplication;
-@class NSData;
-
-SWIFT_CLASS("_TtC16fanmeter_sdk_ios29PluggableAppDelegateExtension")
-@interface PluggableAppDelegateExtension : NSObject <UIApplicationDelegate>
-- (void)application:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
-- (void)application:(UIApplication * _Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
-- (void)application:(UIApplication * _Nonnull)application didReceiveRemoteNotification:(NSDictionary * _Nonnull)userInfo fetchCompletionHandler:(void (^ _Nonnull)(UIBackgroundFetchResult))completionHandler;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class UNUserNotificationCenter;
-@class UNNotification;
-@class UNNotificationResponse;
-
-SWIFT_CLASS("_TtC16fanmeter_sdk_ios30PluggableNotificationExtension")
-@interface PluggableNotificationExtension : NSObject <UNUserNotificationCenterDelegate>
-- (void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center willPresentNotification:(UNNotification * _Nonnull)notification withCompletionHandler:(void (^ _Nonnull)(UNNotificationPresentationOptions))completionHandler;
-- (void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response withCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class CLLocationManager;
 @class CLLocation;
 
@@ -812,7 +753,6 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios17SensorFeedHandler")
 /// Location Delegate - Tells the delegate that the location manager was unable to retrieve a location value.
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 @end
-
 
 
 
