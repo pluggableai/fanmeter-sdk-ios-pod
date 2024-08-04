@@ -16,16 +16,16 @@ import _SwiftConcurrencyShims
 @_exported import fanmeter_sdk_ios
 import os
 @_hasMissingDesignatedInitializers public class EntryPoint {
-  public class func execute(externalUserId: Swift.String, externalTokenId: Swift.String, notificationData: [Swift.AnyHashable : Any], externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Swift.Bool?) -> Swift.String
-  public class func launchFanmeterView(companyName: Swift.String, licenseKey: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Swift.Bool?) -> Swift.String
+  public class func execute(externalUserId: Swift.String, externalTokenId: Swift.String, notificationData: [Swift.AnyHashable : Any], externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Swift.Bool?) -> Swift.Int
+  public class func launchFanmeterView(companyName: Swift.String, licenseKey: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Swift.Bool?) -> Swift.Int
   public class func isServiceRunning(callback: (Swift.Int) -> ())
   public class func startService(companyName: Swift.String, licenseKey: Swift.String, eventTitle: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Swift.Bool?, callback: ((Swift.Int) -> ())? = nil)
   public class func stopService(log: Swift.Bool?, callback: ((Swift.Int) -> ())? = nil)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class EntryPointBridge : ObjectiveC.NSObject {
-  @objc public class func execute(externalUserId: Swift.String, externalTokenId: Swift.String, notificationData: [Swift.AnyHashable : Any], externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Foundation.NSNumber?) -> Swift.String
-  @objc public class func launchFanmeterView(companyName: Swift.String, licenseKey: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Foundation.NSNumber?) -> Swift.String
+  @objc public class func execute(externalUserId: Swift.String, externalTokenId: Swift.String, notificationData: [Swift.AnyHashable : Any], externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Foundation.NSNumber?) -> Swift.Int
+  @objc public class func launchFanmeterView(companyName: Swift.String, licenseKey: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Foundation.NSNumber?) -> Swift.Int
   @objc public class func isServiceRunning(callback: (Swift.Int) -> ())
   @objc public class func startService(companyName: Swift.String, licenseKey: Swift.String, eventTitle: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String?, fcmToken: Swift.String?, ticketNumber: Swift.String?, ticketStand: Swift.String?, log: Foundation.NSNumber?, callback: ((Swift.Int) -> ())? = nil)
   @objc public class func stopService(log: Foundation.NSNumber?, callback: ((Swift.Int) -> ())? = nil)

@@ -319,7 +319,7 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
 /// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
 /// -96: Failed to get event details; -97: Failed to start background service;
-+ (NSString * _Nonnull)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
++ (NSInteger)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
 /// API entry point to launch Fanmeter+s native view.
 /// @param companyName the name of the company requesting to start the service.
 /// @param licenseKey the license key of the company requesting to start the service.
@@ -334,7 +334,7 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
 /// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
 /// -96: Failed to get event details; -97: Failed to start background service;
-+ (NSString * _Nonnull)launchFanmeterViewWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
++ (NSInteger)launchFanmeterViewWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
 /// API sync entry point to check if the SDK has its service running.
 /// @param callback the callback where the results are returned (optional).
 /// @return callback returns true (1), if service is running; false (0), if it is not running.
@@ -719,7 +719,7 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
 /// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
 /// -96: Failed to get event details; -97: Failed to start background service;
-+ (NSString * _Nonnull)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
++ (NSInteger)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
 /// API entry point to launch Fanmeter+s native view.
 /// @param companyName the name of the company requesting to start the service.
 /// @param licenseKey the license key of the company requesting to start the service.
@@ -734,7 +734,7 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
 /// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
 /// -96: Failed to get event details; -97: Failed to start background service;
-+ (NSString * _Nonnull)launchFanmeterViewWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
++ (NSInteger)launchFanmeterViewWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
 /// API sync entry point to check if the SDK has its service running.
 /// @param callback the callback where the results are returned (optional).
 /// @return callback returns true (1), if service is running; false (0), if it is not running.
