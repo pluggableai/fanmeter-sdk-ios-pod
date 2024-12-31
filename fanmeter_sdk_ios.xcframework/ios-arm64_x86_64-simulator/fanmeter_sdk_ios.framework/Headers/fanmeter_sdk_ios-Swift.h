@@ -310,61 +310,54 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// The SDK entrypoint for Objective-C calls.
 SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 @interface EntryPointBridge : NSObject
-/// API async entry point to launch the SDK when the notification is clicked from Objective-C.
-/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
+/// API async entry point to initialize the SDK.
+/// @param companyName the exact name of the company in Pluggable’s platform.
+/// @param companyKey the company key of the company requesting to use the SDK.
+/// @param externalUserId the user’s identifier in the company’s db (can be the username, the uuid, …).
 /// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
+/// @param externalUserEmail the user’s email (optional).
+/// @param fcmToken the FCM token id (optional).
+/// @param ticketNumber the ticket number of the user (optional).
+/// @param ticketStand the stand where the user is (optional).
+/// @param urlRegulation the url to redirect to a web page containing a regulation of participation (optional).
+/// @param log enable additional logging (optional).
+/// @return callback returns: 1: SUCCESS;
+/// -70: Invalid parameters used; -71: Invalid database access.
++ (NSInteger)initializeWithCompanyName:(NSString * _Nonnull)companyName companyKey:(NSString * _Nonnull)companyKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand urlRegulation:(NSString * _Nullable)urlRegulation log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
+/// Async entry point to launch Fanmeter native’s view, when a Fanmeter notification is clicked.     *
+/// Used for a fully-automatized implementation of Fanmeter if, and only if, using Fanmeter push notifications.
 /// @param notificationData a map containing data coming from the notification.
-/// @param externalUserEmail the user’s email (optional).
-/// @param fcmToken the FCM token id (optional).
-/// @param ticketNumber the ticket number of the user (optional).
-/// @param ticketStand the stand where the given user is (optional).
-/// @param log enable additional logging (optional).
 /// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
-/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
-/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
-/// -96: Failed to get event details; -97: Failed to start background service;
-+ (NSInteger)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
-/// API entry point to launch Fanmeter+s native view.
-/// @param companyName the name of the company requesting to start the service.
-/// @param licenseKey the license key of the company requesting to start the service.
-/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
-/// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
-/// @param externalUserEmail the user’s email (optional).
-/// @param fcmToken the FCM token id (optional).
-/// @param ticketNumber the ticket number of the user (optional).
-/// @param ticketStand the stand where the given user is (optional).
-/// @param log enable additional logging (optional).
+/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
+/// -91: Invalid notification data; -92: Invalid Company license key; -93: Invalid Event;
+/// -94: Event not happening now; -95: Invalid external user data;
+/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
++ (NSInteger)executeWithNotificationData:(NSDictionary * _Nonnull)notificationData SWIFT_WARN_UNUSED_RESULT;
+/// Entry point that launches Fanmeter native’s view.
+/// Used for a fully-automatized implementation of Fanmeter.
 /// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
-/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
-/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
-/// -96: Failed to get event details; -97: Failed to start background service;
-+ (NSInteger)launchFanmeterViewWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
-/// API sync entry point to check if the SDK has its service running.
-/// @param callback the callback where the results are returned (optional).
-/// @return callback returns true (1), if service is running; false (0), if it is not running.
+/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
+/// -92: Invalid Company license key; -93: Invalid Event;
+/// -94: Event not happening now; -95: Invalid external user data;
+/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
++ (NSInteger)launchFanmeterView SWIFT_WARN_UNUSED_RESULT;
+/// Async entry point to check if the Fanmeter service is running.
+/// @param callback the callback where the results are returned.
+/// @return callback returns true (1), if service is running; false (0), otherwise.
 + (void)isServiceRunningWithCallback:(SWIFT_NOESCAPE void (^ _Nonnull)(NSInteger))callback;
-/// Enables sensor data collection for a specific [externalUserId] at an event with a given [eventTitle].
-/// @param companyName the name of the company requesting to start the service.
-/// @param licenseKey the license key of the company requesting to start the service.
+/// Async entry point that starts the Fanmeter service for an event with a given [eventTitle].
 /// @param eventTitle the event name.
-/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
-/// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
-/// @param externalUserEmail the user’s email (optional).
-/// @param fcmToken the FCM token id (optional).
-/// @param ticketNumber the ticket number of the user (optional).
-/// @param ticketStand the stand where the given user is (optional).
-/// @param log enable additional logging (optional).
 /// @param callback the callback where the results are returned (optional).
 /// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
-/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
-/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
-/// -96: Failed to get event details; -97: Failed to start background service;
-+ (void)startServiceWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey eventTitle:(NSString * _Nonnull)eventTitle externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
-/// Disables sensor data collection for an user at a specific event.
-/// @param log enable additional logging (optional).
+/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
+/// -92: Invalid Company license key; -93: Invalid Event;
+/// -94: Event not happening now; -95: Invalid external user data;
+/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
++ (void)startServiceWithEventTitle:(NSString * _Nonnull)eventTitle callback:(void (^ _Nullable)(NSInteger))callback;
+/// Async entry point that stops the Fanmeter service.
 /// @param callback the callback where the results are returned (optional).
-/// @return callback returns ‘1’ if SUCCESS otherwise an error code.
-+ (void)stopServiceWithLog:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
+/// @return callback always returns ‘1’, as it forces the stop of any running service.
++ (void)stopServiceWithCallback:(void (^ _Nullable)(NSInteger))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -714,61 +707,54 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// The SDK entrypoint for Objective-C calls.
 SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 @interface EntryPointBridge : NSObject
-/// API async entry point to launch the SDK when the notification is clicked from Objective-C.
-/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
+/// API async entry point to initialize the SDK.
+/// @param companyName the exact name of the company in Pluggable’s platform.
+/// @param companyKey the company key of the company requesting to use the SDK.
+/// @param externalUserId the user’s identifier in the company’s db (can be the username, the uuid, …).
 /// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
+/// @param externalUserEmail the user’s email (optional).
+/// @param fcmToken the FCM token id (optional).
+/// @param ticketNumber the ticket number of the user (optional).
+/// @param ticketStand the stand where the user is (optional).
+/// @param urlRegulation the url to redirect to a web page containing a regulation of participation (optional).
+/// @param log enable additional logging (optional).
+/// @return callback returns: 1: SUCCESS;
+/// -70: Invalid parameters used; -71: Invalid database access.
++ (NSInteger)initializeWithCompanyName:(NSString * _Nonnull)companyName companyKey:(NSString * _Nonnull)companyKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand urlRegulation:(NSString * _Nullable)urlRegulation log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
+/// Async entry point to launch Fanmeter native’s view, when a Fanmeter notification is clicked.     *
+/// Used for a fully-automatized implementation of Fanmeter if, and only if, using Fanmeter push notifications.
 /// @param notificationData a map containing data coming from the notification.
-/// @param externalUserEmail the user’s email (optional).
-/// @param fcmToken the FCM token id (optional).
-/// @param ticketNumber the ticket number of the user (optional).
-/// @param ticketStand the stand where the given user is (optional).
-/// @param log enable additional logging (optional).
 /// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
-/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
-/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
-/// -96: Failed to get event details; -97: Failed to start background service;
-+ (NSInteger)executeWithExternalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId notificationData:(NSDictionary * _Nonnull)notificationData externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
-/// API entry point to launch Fanmeter+s native view.
-/// @param companyName the name of the company requesting to start the service.
-/// @param licenseKey the license key of the company requesting to start the service.
-/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
-/// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
-/// @param externalUserEmail the user’s email (optional).
-/// @param fcmToken the FCM token id (optional).
-/// @param ticketNumber the ticket number of the user (optional).
-/// @param ticketStand the stand where the given user is (optional).
-/// @param log enable additional logging (optional).
+/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
+/// -91: Invalid notification data; -92: Invalid Company license key; -93: Invalid Event;
+/// -94: Event not happening now; -95: Invalid external user data;
+/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
++ (NSInteger)executeWithNotificationData:(NSDictionary * _Nonnull)notificationData SWIFT_WARN_UNUSED_RESULT;
+/// Entry point that launches Fanmeter native’s view.
+/// Used for a fully-automatized implementation of Fanmeter.
 /// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
-/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
-/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
-/// -96: Failed to get event details; -97: Failed to start background service;
-+ (NSInteger)launchFanmeterViewWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
-/// API sync entry point to check if the SDK has its service running.
-/// @param callback the callback where the results are returned (optional).
-/// @return callback returns true (1), if service is running; false (0), if it is not running.
+/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
+/// -92: Invalid Company license key; -93: Invalid Event;
+/// -94: Event not happening now; -95: Invalid external user data;
+/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
++ (NSInteger)launchFanmeterView SWIFT_WARN_UNUSED_RESULT;
+/// Async entry point to check if the Fanmeter service is running.
+/// @param callback the callback where the results are returned.
+/// @return callback returns true (1), if service is running; false (0), otherwise.
 + (void)isServiceRunningWithCallback:(SWIFT_NOESCAPE void (^ _Nonnull)(NSInteger))callback;
-/// Enables sensor data collection for a specific [externalUserId] at an event with a given [eventTitle].
-/// @param companyName the name of the company requesting to start the service.
-/// @param licenseKey the license key of the company requesting to start the service.
+/// Async entry point that starts the Fanmeter service for an event with a given [eventTitle].
 /// @param eventTitle the event name.
-/// @param externalUserId the user identifier in the company’s db (can be the username, the uuid, …).
-/// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
-/// @param externalUserEmail the user’s email (optional).
-/// @param fcmToken the FCM token id (optional).
-/// @param ticketNumber the ticket number of the user (optional).
-/// @param ticketStand the stand where the given user is (optional).
-/// @param log enable additional logging (optional).
 /// @param callback the callback where the results are returned (optional).
 /// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
-/// -81: GPS Disabled; -82: Invalid event coordinates; -92: Invalid License; -93: Invalid Event;
-/// -94: Invalid event dates; -95: [externalUserId] or [externalTokenId] are empty;
-/// -96: Failed to get event details; -97: Failed to start background service;
-+ (void)startServiceWithCompanyName:(NSString * _Nonnull)companyName licenseKey:(NSString * _Nonnull)licenseKey eventTitle:(NSString * _Nonnull)eventTitle externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand log:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
-/// Disables sensor data collection for an user at a specific event.
-/// @param log enable additional logging (optional).
+/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
+/// -92: Invalid Company license key; -93: Invalid Event;
+/// -94: Event not happening now; -95: Invalid external user data;
+/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
++ (void)startServiceWithEventTitle:(NSString * _Nonnull)eventTitle callback:(void (^ _Nullable)(NSInteger))callback;
+/// Async entry point that stops the Fanmeter service.
 /// @param callback the callback where the results are returned (optional).
-/// @return callback returns ‘1’ if SUCCESS otherwise an error code.
-+ (void)stopServiceWithLog:(NSNumber * _Nullable)log callback:(void (^ _Nullable)(NSInteger))callback;
+/// @return callback always returns ‘1’, as it forces the stop of any running service.
++ (void)stopServiceWithCallback:(void (^ _Nullable)(NSInteger))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
