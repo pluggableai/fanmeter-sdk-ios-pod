@@ -335,12 +335,13 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 + (NSInteger)executeWithNotificationData:(NSDictionary * _Nonnull)notificationData SWIFT_WARN_UNUSED_RESULT;
 /// Entry point that launches Fanmeter native’s view.
 /// Used for a fully-automatized implementation of Fanmeter.
+/// @param eventTitle the event name (optional).
 /// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
 /// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
 /// -92: Invalid Company license key; -93: Invalid Event;
 /// -94: Event not happening now; -95: Invalid external user data;
 /// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
-+ (NSInteger)launchFanmeterView SWIFT_WARN_UNUSED_RESULT;
++ (NSInteger)launchFanmeterViewWithEventTitle:(NSString * _Nullable)eventTitle SWIFT_WARN_UNUSED_RESULT;
 /// Async entry point to check if the Fanmeter service is running.
 /// @param callback the callback where the results are returned.
 /// @return callback returns true (1), if service is running; false (0), otherwise.
