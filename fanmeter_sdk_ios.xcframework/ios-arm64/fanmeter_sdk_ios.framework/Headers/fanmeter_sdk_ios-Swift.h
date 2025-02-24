@@ -334,6 +334,17 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// -94: Event not happening now; -95: Invalid external user data;
 /// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
 + (void)executeWithNotificationData:(NSDictionary * _Nonnull)notificationData callback:(void (^ _Nullable)(NSInteger))callback;
+/// Entry point that launches Fanmeter native’s view.
+/// If [eventId] is null, get the closest available event to the current date.
+/// Used for a fully-automatized implementation of Fanmeter.
+/// @param eventId the id of the event in Pluggable’s platform (optional).
+/// @param callback the callback where the results are returned (optional).
+/// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
+/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
+/// -92: Invalid Company license key; -93: Invalid Event;
+/// -94: Event not happening now; -95: Invalid external user data;
+/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
++ (void)launchFanmeterViewWithEventId:(NSNumber * _Nullable)eventId callback:(void (^ _Nullable)(NSInteger))callback;
 /// Async entry point to check if the Fanmeter service is running.
 /// @param callback the callback where the results are returned.
 /// @return callback returns true (1), if service is running; false (0), otherwise.
@@ -346,7 +357,7 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// -92: Invalid Company license key; -93: Invalid Event;
 /// -94: Event not happening now; -95: Invalid external user data;
 /// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
-+ (void)startServiceWithEventId:(NSInteger)eventId callback:(void (^ _Nullable)(NSInteger))callback;
++ (void)startServiceWithEventId:(NSNumber * _Nonnull)eventId callback:(void (^ _Nullable)(NSInteger))callback;
 /// Async entry point that stops the Fanmeter service.
 /// @param callback the callback where the results are returned (optional).
 /// @return callback always returns ‘1’, as it forces the stop of any running service.
