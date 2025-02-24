@@ -5,7 +5,6 @@
 import CommonCrypto
 import CoreMotion
 import CoreTelephony
-import CryptoKit
 import DeveloperToolsSupport
 import Foundation
 import SQLite3
@@ -19,20 +18,22 @@ import _SwiftConcurrencyShims
 import os
 @_hasMissingDesignatedInitializers public class EntryPoint {
   public class func initialize(companyName: Swift.String, companyKey: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String? = nil, fcmToken: Swift.String? = nil, ticketNumber: Swift.String? = nil, ticketStand: Swift.String? = nil, urlRegulation: Swift.String? = nil, log: Swift.Bool? = nil) -> Swift.Int
-  public class func execute(notificationData: [Swift.AnyHashable : Any]) -> Swift.Int
-  public class func launchFanmeterView(eventTitle: Swift.String? = nil) -> Swift.Int
+  public class func execute(notificationData: [Swift.AnyHashable : Any], callback: ((Swift.Int) -> ())? = nil)
+  public class func launchFanmeterView(eventId: Swift.Int? = nil, callback: ((Swift.Int) -> ())? = nil)
   public class func isServiceRunning(callback: (Swift.Int) -> ())
-  public class func startService(eventTitle: Swift.String, callback: ((Swift.Int) -> ())? = nil)
+  public class func startService(eventId: Swift.Int, callback: ((Swift.Int) -> ())? = nil)
   public class func stopService(callback: ((Swift.Int) -> ())? = nil)
+  public class func getEventData(eventTitle: Swift.String? = nil, callback: (([Swift.String : Any]) -> ())? = nil)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class EntryPointBridge : ObjectiveC.NSObject {
   @objc public class func initialize(companyName: Swift.String, companyKey: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String? = nil, fcmToken: Swift.String? = nil, ticketNumber: Swift.String? = nil, ticketStand: Swift.String? = nil, urlRegulation: Swift.String? = nil, log: Foundation.NSNumber? = nil) -> Swift.Int
-  @objc public class func execute(notificationData: [Swift.AnyHashable : Any]) -> Swift.Int
-  @objc public class func launchFanmeterView(eventTitle: Swift.String? = nil) -> Swift.Int
+  @objc public class func execute(notificationData: [Swift.AnyHashable : Any], callback: ((Swift.Int) -> ())? = nil)
+  public class func launchFanmeterView(eventId: Swift.Int? = nil, callback: ((Swift.Int) -> ())? = nil)
   @objc public class func isServiceRunning(callback: (Swift.Int) -> ())
-  @objc public class func startService(eventTitle: Swift.String, callback: ((Swift.Int) -> ())? = nil)
+  @objc public class func startService(eventId: Swift.Int, callback: ((Swift.Int) -> ())? = nil)
   @objc public class func stopService(callback: ((Swift.Int) -> ())? = nil)
+  @objc public class func getEventData(eventTitle: Swift.String? = nil, callback: (([Swift.String : Any]) -> ())? = nil)
   @objc override dynamic public init()
   @objc deinit
 }
