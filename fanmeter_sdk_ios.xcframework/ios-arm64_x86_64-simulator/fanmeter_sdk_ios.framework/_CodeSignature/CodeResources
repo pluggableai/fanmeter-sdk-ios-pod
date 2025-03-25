@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		RHl5/ZulDl0m4EvIVbA9JqYQquc=
+		9+gCR3PwqZkFuxPFcDynzi4LzTg=
 		</data>
 		<key>FanmeterStoryboard.storyboardc/9fl-eM-IbJ-view-NTB-2o-5wN.nib/objects-14.0+.nib</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ddTnfq6CFB+Ov5g6WfF8+20kuEU=
+		C/TVF1fE40eMQ8XpkIcW2hdgRKQ=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		lSNdA2HsY3clgp199gttBsZTqvM=
+		wiCf7ZAM7l3ghZ08VIRvSwzk8nY=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		jZzQ4pazJx9j+RdXkhXOG6gdCwc=
+		SLqehHJvBWGe4C6/8epuC/oJ23s=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		V7xmAf1T5W7jHvwo+tj1WE4wIgU=
+		X27VAx8cQIFXQVzdBeYiUVA5pas=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Zzq5JoptJQCvdujQhDOsp/jEGPg=
+		ppPQbHC8AstocN7nTwZd1ruiIIg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -88,7 +88,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YSn2n6+i4Mw60K0t1I2vFaCJyTI=
+			fsrDAfGuP37fHBmMcdofDCvHgls=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -97,7 +97,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kECcquTYayOyCpH6NvYnHpyHsXU=
+			zmQI/BZzzrqPvHPpt6EYnmrnwxE=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -106,7 +106,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5Q7orCY7wdQQeiAt2ztnZCAuJq4=
+			KXJsK10pGv3RTMUUqbTma4HOngs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -115,7 +115,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VmU3zbEebfy7DHLzBYgDWDtUuYs=
+			YDchjojNclZZ7HIr6xACAGgUcC4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -127,7 +127,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FY9d+WcYgGfrRbhkhczaxSAOefvEPG5Livyi82NrKIM=
+			yGoIEfwZ44oyjKBC4GhX3METj4GsfNWkeTMxfO3yOyw=
 			</data>
 		</dict>
 		<key>FanmeterStoryboard.storyboardc/9fl-eM-IbJ-view-NTB-2o-5wN.nib/objects-14.0+.nib</key>
@@ -197,7 +197,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nuPdrTIRBPzZl9mfFl+EMDNdrj2PJoS/u9z4FLalrDY=
+			sAkjBw2qOg+6pjsGyJ9Dmjj7xSW8J9VAjhh6iCwqxes=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
@@ -211,7 +211,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jgTBoyW8m6SG9vYa36J0s39QLUaue0PFumeI/TTriAs=
+			LBts/51M1sYsebLoXR6pAddsZmu+FjTIIc9SMicBHT8=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -232,7 +232,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oNProedm0zc6iuJ7uRPcNTaNaicHXqptxKM0H2kiOY0=
+			6s1aE+WuZDOkQbgnb74VjTmOk9Vc1/++1GFFaE5BUts=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
@@ -246,7 +246,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2UtoxelQFBA5BinY329eH+7XcDkrBkfSX9p5oaHhKCo=
+			f8XSmVfuSZx1kt5TFUNN2s1NhIp0ghxvcJAbFxAt0mo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -260,7 +260,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fdusk4WOP8OQ49DREJs1SrjfRy8At+IRZ+CSuT8URtY=
+			CW7aFzPIM+LyAsKkBZjHOju5mxSh4/CH0DEbHknlXy8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -269,7 +269,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			I5mlnJ1y5qSVlJ7bTZbzJv6aspLSHZ3zRwz5VggCFPk=
+			tN/JCCYVBbDuVGWKuU4E4QZaY1XPzgCwBiYoy4wiVps=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -278,7 +278,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			i7v9qFWc+cup/hyjjZ6lYEe9ZD1PgnfxzelKDK2eT/M=
+			CpPlUu1M+JicQFLWHSdgeMjpfROnJIcW6vUFm1djfBM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -287,7 +287,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			G8HrwL1fIcv/+CPGY1rJ/M/yFYHAkXFQbssT0fYC1kg=
+			X4T9kC/8Auj60jM7nn8sQ4uyZVPNggQnicJ2ucmgLm8=
 			</data>
 			<key>optional</key>
 			<true/>
