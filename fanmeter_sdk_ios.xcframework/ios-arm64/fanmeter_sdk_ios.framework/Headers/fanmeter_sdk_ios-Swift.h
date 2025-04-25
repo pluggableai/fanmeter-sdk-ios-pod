@@ -311,62 +311,270 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 @interface EntryPointBridge : NSObject
 /// API async entry point to initialize the SDK.
-/// @param companyName the exact name of the company in Pluggable’s platform.
-/// @param companyKey the company key of the company requesting to use the SDK.
-/// @param externalUserId the user’s identifier in the company’s db (can be the username, the uuid, …).
-/// @param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
-/// @param externalUserEmail the user’s email (optional).
-/// @param fcmToken the FCM token id (optional).
-/// @param ticketNumber the ticket number of the user (optional).
-/// @param ticketStand the stand where the user is (optional).
-/// @param urlRegulation the url to redirect to a web page containing a regulation of participation (optional).
-/// @param log enable additional logging (optional).
-/// @return callback returns: 1: SUCCESS;
-/// -70: Invalid parameters used; -71: Invalid database access; -72: Invalid Regulation URL format.
+/// \param companyName the exact name of the company in Pluggable’s platform.
+///
+/// \param companyKey the company key of the company requesting to use the SDK.
+///
+/// \param externalUserId the user’s identifier in the company’s db (can be the username, the uuid, …).
+///
+/// \param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
+///
+/// \param externalUserEmail the user’s email (optional).
+///
+/// \param fcmToken the FCM token id (optional).
+///
+/// \param ticketNumber the ticket number of the user (optional).
+///
+/// \param ticketStand the stand where the user is (optional).
+///
+/// \param urlRegulation the url to redirect to a web page containing a regulation of participation (optional).
+///
+/// \param log enable additional logging (optional).
+///
+///
+/// returns:
+/// callback returns:
+/// <ul>
+///   <li>
+///     1: Success;
+///   </li>
+///   <li>
+///     -70: Invalid parameters used;
+///   </li>
+///   <li>
+///     -71: Invalid database access;
+///   </li>
+///   <li>
+///     -72: Invalid Regulation URL format.
+///   </li>
+/// </ul>
 + (NSInteger)initializeWithCompanyName:(NSString * _Nonnull)companyName companyKey:(NSString * _Nonnull)companyKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand urlRegulation:(NSString * _Nullable)urlRegulation log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
 /// Async entry point to launch Fanmeter native’s view, when a Fanmeter notification is clicked.     *
 /// Used for a fully-automatized implementation of Fanmeter if, and only if, using Fanmeter push notifications.
-/// @param notificationData a map containing data coming from the notification.
-/// @param callback the callback where the results are returned (optional).
-/// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
-/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
-/// -91: Invalid notification data; -92: Invalid Company license key; -93: Invalid Event;
-/// -94: Event not happening now; -95: Invalid external user data;
-/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
+/// \param notificationData a map containing data coming from the notification.
+///
+/// \param callback the callback where the results are returned (optional).
+///
+///
+/// returns:
+/// callback returns:
+/// <ul>
+///   <li>
+///     1: Success;
+///   </li>
+///   <li>
+///     -80: No GPS/PUSH Permissions;
+///   </li>
+///   <li>
+///     -81: GPS Disabled;
+///   </li>
+///   <li>
+///     -82: Invalid event coordinates;
+///   </li>
+///   <li>
+///     -89: SDK not initialized;
+///   </li>
+///   <li>
+///     -91: Invalid notification data;
+///   </li>
+///   <li>
+///     -92: Invalid Company license key;
+///   </li>
+///   <li>
+///     -93: Invalid Event;
+///   </li>
+///   <li>
+///     -94: Event not happening now;
+///   </li>
+///   <li>
+///     -95: Invalid external user data;
+///   </li>
+///   <li>
+///     -96: Failed to get event data;
+///   </li>
+///   <li>
+///     -97: Failed to start the Fanmeter service.
+///   </li>
+/// </ul>
 + (void)executeWithNotificationData:(NSDictionary * _Nonnull)notificationData callback:(void (^ _Nullable)(NSInteger))callback;
 /// Entry point that launches Fanmeter native’s view.
 /// If [eventId] is null, get the closest available event to the current date.
 /// Used for a fully-automatized implementation of Fanmeter.
-/// @param eventId the id of the event in Pluggable’s platform (optional).
-/// @param callback the callback where the results are returned (optional).
-/// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
-/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
-/// -92: Invalid Company license key; -93: Invalid Event;
-/// -94: Event not happening now; -95: Invalid external user data;
-/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
+/// \param eventId the id of the event in Pluggable’s platform (optional).
+///
+/// \param callback the callback where the results are returned (optional).
+///
+///
+/// returns:
+/// callback returns:
+/// <ul>
+///   <li>
+///     1: Success;
+///   </li>
+///   <li>
+///     -80: No GPS/PUSH Permissions;
+///   </li>
+///   <li>
+///     -81: GPS Disabled;
+///   </li>
+///   <li>
+///     -82: Invalid event coordinates;
+///   </li>
+///   <li>
+///     -89: SDK not initialized;
+///   </li>
+///   <li>
+///     -92: Invalid Company license key;
+///   </li>
+///   <li>
+///     -93: Invalid Event;
+///   </li>
+///   <li>
+///     -94: Event not happening now;
+///   </li>
+///   <li>
+///     -95: Invalid external user data;
+///   </li>
+///   <li>
+///     -96: Failed to get event data;
+///   </li>
+///   <li>
+///     -97: Failed to start the Fanmeter service.
+///   </li>
+/// </ul>
 + (void)launchFanmeterViewWithEventId:(NSNumber * _Nullable)eventId callback:(void (^ _Nullable)(NSInteger))callback;
 /// Async entry point to check if the Fanmeter service is running.
-/// @param callback the callback where the results are returned.
-/// @return callback returns true (1), if service is running; false (0), otherwise.
+/// \param callback the callback where the results are returned.
+///
+///
+/// returns:
+/// callback returns:
+/// <ul>
+///   <li>
+///     1: callback returns 1 (true), if service is running; 0 (false), otherwise.
+///   </li>
+/// </ul>
 + (void)isServiceRunningWithCallback:(SWIFT_NOESCAPE void (^ _Nonnull)(NSInteger))callback;
 /// Async entry point that starts the Fanmeter service for an event with a given [eventTitle].
-/// @param eventId the event id as it was created in Pluggable’s platform.
-/// @param callback the callback where the results are returned (optional).
-/// @return callback returns: 1: SUCCESS; -80: No GPS/PUSH Permissions;
-/// -81: GPS Disabled; -82: Invalid event coordinates; -89: SDK not initialized;
-/// -92: Invalid Company license key; -93: Invalid Event;
-/// -94: Event not happening now; -95: Invalid external user data;
-/// -96: Failed to get event data; -97: Failed to start the Fanmeter service;
+/// \param eventId the event id as it was created in Pluggable’s platform.
+///
+/// \param callback the callback where the results are returned (optional).
+///
+///
+/// returns:
+/// callback returns:
+/// <ul>
+///   <li>
+///     1: Success;
+///   </li>
+///   <li>
+///     -80: No GPS/PUSH Permissions;
+///   </li>
+///   <li>
+///     -81: GPS Disabled;
+///   </li>
+///   <li>
+///     -82: Invalid event coordinates;
+///   </li>
+///   <li>
+///     -89: SDK not initialized;
+///   </li>
+///   <li>
+///     -92: Invalid Company license key;
+///   </li>
+///   <li>
+///     -93: Invalid Event;
+///   </li>
+///   <li>
+///     -94: Event not happening now;
+///   </li>
+///   <li>
+///     -95: Invalid external user data;
+///   </li>
+///   <li>
+///     -96: Failed to get event data;
+///   </li>
+///   <li>
+///     -97: Failed to start the Fanmeter service;
+///   </li>
+///   <li>
+///     -98: Another Fanmeter service is already running.
+///   </li>
+/// </ul>
 + (void)startServiceWithEventId:(NSNumber * _Nonnull)eventId callback:(void (^ _Nullable)(NSInteger))callback;
 /// Async entry point that stops the Fanmeter service.
-/// @param callback the callback where the results are returned (optional).
-/// @return callback always returns ‘1’, as it forces the stop of any running service.
+/// \param callback the callback where the results are returned (optional).
+///
+///
+/// returns:
+/// callback returns:
+/// <ul>
+///   <li>
+///     1: callback always returns ‘1’, as it forces the stop of any running service.
+///   </li>
+/// </ul>
 + (void)stopServiceWithCallback:(void (^ _Nullable)(NSInteger))callback;
 /// Fetches event data asynchronously, including rewards and top-10 leaderboard results.
 /// If eventTitle is not set, get the closest event in date.
-/// @param eventTitle the event name as it was created in Pluggable’s platform (optional).
-/// @param callback the callback returning the event data and an success/error code.
+/// \param eventTitle the event name as it was created in Pluggable’s platform (optional).
+///
+/// \param callback the callback returning the event data and a success/error code.
+///
+///
+/// returns:
+/// callback returns:
+/// <ul>
+///   <li>
+///     json: with event data;
+///   </li>
+///   <li>
+///     code: if success or error.
+///   </li>
+/// </ul>
 + (void)getEventDataWithEventTitle:(NSString * _Nullable)eventTitle callback:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))callback;
+/// Async entry point that subscribes a listener for user participation state changes for a given event.
+/// \param eventId the id of the event, as created on the Pluggable platform, to which the user’s participation listener is being subscribed.
+///
+/// \param callback the callback function that is invoked with the participation state (as an integer) when the state changes.
+///
+///
+/// returns:
+/// callback returns:
+/// <ul>
+///   <li>
+///     0: Not Participating;
+///   </li>
+///   <li>
+///     1: Validating Participation;
+///   </li>
+///   <li>
+///     2: Participating;
+///   </li>
+///   <li>
+///     3: GPS disabled;
+///   </li>
+///   <li>
+///     4: Out of venue;
+///   </li>
+///   <li>
+///     5: Unknown coordinates.
+///   </li>
+/// </ul>
++ (void)subscribeUserParticipationListenerWithEventId:(NSNumber * _Nonnull)eventId callback:(void (^ _Nonnull)(NSInteger))callback;
+/// Async entry point that unsubscribes a listener for user participation state changes for a given event.
+/// \param eventId the event ID, as created on Pluggable’s platform, for which the user’s participation listener should be cancelled. If not provided, it cancels the listener to all events.
+///
+/// \param callback the callback function that is invoked to notify the result of the unsubscription.
+///
+///
+/// returns:
+/// callback returns:
+/// <ul>
+///   <li>
+///     1: callback always returns 1, as it forces the stop of any running listener.
+///   </li>
+/// </ul>
++ (void)unsubscribeUserParticipationListenerWithEventId:(NSNumber * _Nullable)eventId callback:(void (^ _Nullable)(NSInteger))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

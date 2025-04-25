@@ -24,6 +24,8 @@ import os
   public class func startService(eventId: Swift.Int, callback: ((Swift.Int) -> ())? = nil)
   public class func stopService(callback: ((Swift.Int) -> ())? = nil)
   public class func getEventData(eventTitle: Swift.String? = nil, callback: (([Swift.String : Any]) -> ())? = nil)
+  public class func subscribeUserParticipationListener(eventId: Swift.Int, callback: @escaping (Swift.Int) -> ())
+  public class func unsubscribeUserParticipationListener(eventId: Swift.Int? = nil, callback: ((Swift.Int) -> ())? = nil)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class EntryPointBridge : ObjectiveC.NSObject {
@@ -34,6 +36,8 @@ import os
   @objc public class func startService(eventId: Foundation.NSNumber, callback: ((Swift.Int) -> ())? = nil)
   @objc public class func stopService(callback: ((Swift.Int) -> ())? = nil)
   @objc public class func getEventData(eventTitle: Swift.String? = nil, callback: (([Swift.String : Any]) -> ())? = nil)
+  @objc public class func subscribeUserParticipationListener(eventId: Foundation.NSNumber, callback: @escaping (Swift.Int) -> ())
+  @objc public class func unsubscribeUserParticipationListener(eventId: Foundation.NSNumber? = nil, callback: ((Swift.Int) -> ())? = nil)
   @objc override dynamic public init()
   @objc deinit
 }
