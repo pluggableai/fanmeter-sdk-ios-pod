@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		W0lsfVramR/+XdWNOVohoeRvylo=
+		9+gCR3PwqZkFuxPFcDynzi4LzTg=
 		</data>
 		<key>FanmeterStoryboard.storyboardc/9fl-eM-IbJ-view-NTB-2o-5wN.nib</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AQoF5gceIBnV7ideMFdPj5TJDcE=
+		EDN6dh61V4PKFIYKzQ7f3aQ9mNQ=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		tw/+ucS+7Isz9dSC9ZqHo7uw5V0=
+		ig5+5ZyoZFnJ0/7f/5jc5tAt7yw=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		YOjA4nCQR2WSQ/Q36N6mlmLSQzM=
+		sbTByopcBR6tBwUE0er43a/taLI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -119,7 +119,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NRGuXXYNPseI9D3mOsnLZrR6a5TAnrLl23Eoadn8asM=
+			yGoIEfwZ44oyjKBC4GhX3METj4GsfNWkeTMxfO3yOyw=
 			</data>
 		</dict>
 		<key>FanmeterStoryboard.storyboardc/9fl-eM-IbJ-view-NTB-2o-5wN.nib</key>
@@ -189,7 +189,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			i6PnE+xj3qeN0d3aPfUrDX5xWEEKs19duZ2JvM7oeoc=
+			FplOX1vPqz8Cm86UbZ8Y77hmku44vXzBV1HVj56sVys=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -224,7 +224,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9VpXkuXRGAOrEceBPEpdVx4hCE8D3nY5y49y8yauTLU=
+			SyjcZVvCd+SCKufJmS2p6UaQj75mdrijelqKH99X5PA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
