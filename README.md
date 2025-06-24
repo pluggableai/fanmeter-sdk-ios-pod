@@ -6,7 +6,7 @@ target 'YOUR-APP' do
   use_frameworks!
 
   # Pods for fanmeter-ios-testapp
-  pod 'fanmeter_sdk_ios', '~> 4.1.10'
+  pod 'fanmeter_sdk_ios', '~> 4.1.11'
 
 end
 ```
