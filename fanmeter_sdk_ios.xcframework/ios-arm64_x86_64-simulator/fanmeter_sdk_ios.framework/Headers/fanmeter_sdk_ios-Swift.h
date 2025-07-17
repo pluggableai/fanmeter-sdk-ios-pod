@@ -604,6 +604,7 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios17SensorFeedHandler")
 
 
 
+
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -1211,6 +1212,7 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios17SensorFeedHandler")
 /// Location Delegate - Tells the delegate that the location manager was unable to retrieve a location value.
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 @end
+
 
 
 

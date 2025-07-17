@@ -6,23 +6,23 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		N2XYlYCfN9Xe24Pg8gPC8ikLLbs=
+		ZT1F4iby3d+ehXo5usb7aoVPjGA=
 		</data>
 		<key>FanmeterStoryboard.storyboardc/9fl-eM-IbJ-view-NTB-2o-5wN.nib</key>
 		<data>
-		Yld334DNuknEfzwSSWPb3bQX5jo=
+		HM4X9pIONPv1tOLfT48YIZjHL9s=
 		</data>
-		<key>FanmeterStoryboard.storyboardc/FanmeterStoryboard.nib</key>
+		<key>FanmeterStoryboard.storyboardc/FanmeterViewController.nib</key>
 		<data>
-		Cbx8K9V9vnFX1BDk/P+DqoMxWVo=
+		KxKI8T9p09Y0iaGjt301/w2qS1Y=
 		</data>
 		<key>FanmeterStoryboard.storyboardc/Info.plist</key>
 		<data>
-		fAyaKdeIAHn7mtDTnG7Qrwl/ay4=
+		FGull+wBy8nWjP6l79cpg54i5m8=
 		</data>
 		<key>Headers/fanmeter_sdk_ios-Swift.h</key>
 		<data>
-		ejiRoVjjw3Zj4W5sKMPTpf2LDuI=
+		Uvuc15E8NmcHYaawYsctZEkntF0=
 		</data>
 		<key>Headers/fanmeter_sdk_ios.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		yHK5/+TrEMgcyMwgpqCGgzKwUqk=
+		+iYJsZDOzzfQeixCN/eCMoNKxdQ=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		feCF4hXCN7rW1FVcKJIkr6TOol4=
+		t5e8kNryNXoFmCBVaT/L1ZoxM/c=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sVbkJwYiUE62tRt8he8MHJ1lxCs=
+		1hFV/Ml3OTKZuOy0Mz43SdO5LaU=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		mQz5TzFBc36a6CQyo/ZDgDrR/kU=
+		WKKylelQRTrDLYDaaOVNoTm4G7A=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		J7t0YTNnJikZbz1tzapRNvW7JfA=
+		MKalqZZOGiNeuTQUnCWrHeI1vcE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -80,7 +80,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WrBVo2eXPfK/yiWnhRNmmYKu3c8=
+			JGrLF64nHJ19Uu0ncgsXJa7iQMA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -89,7 +89,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jH1BSaxvs/7ZSNgTWKBsYH+iLvw=
+			WMzm47AMKdIN26Of+imfC5dahL4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -98,7 +98,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EAxQPKBHB0AnMGJcZn7DoEd8Gmg=
+			2UNQxDHURq9Kgj3Nz4Mohgd/giE=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -107,7 +107,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GnT14eYP5h+Bc4+Hr4FV30JUeCc=
+			1YxzpRCRh/TKGsLf2kQr8ptjGrc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -119,35 +119,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FBdCllhlw+2gqzCkX5oHCsIsddFXfyR/1ZA2634J8oM=
+			OTTCLPRfB0X7OQpa1B/58Jg2HoJeGtv7vReS7kpZtfY=
 			</data>
 		</dict>
 		<key>FanmeterStoryboard.storyboardc/9fl-eM-IbJ-view-NTB-2o-5wN.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gwbOEH/CWtLqtwULwk2JGSuYGtHdqMdi1D7bt2yYTV0=
+			cetJKm2WDhvc2cLgb0bRClS9rIn4dp9mvdt3+rbz3X0=
 			</data>
 		</dict>
-		<key>FanmeterStoryboard.storyboardc/FanmeterStoryboard.nib</key>
+		<key>FanmeterStoryboard.storyboardc/FanmeterViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ylPo4Z9xc7syAk16gwaxVbYJO6ma5u7W5/FJOI7VO/k=
+			4cMPSKvOSpOUCflVYTQvqjFCEPDrCqhlvyo2UNUP1dQ=
 			</data>
 		</dict>
 		<key>FanmeterStoryboard.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JFEV7oOAgHsbpQ/5H5KclYxGiuyDFKqBf4qF1mMTmkk=
+			mbhCtZ71tYLw3OVblWpQSWQPOwhWsnN6EYpG0Qdqc+Q=
 			</data>
 		</dict>
 		<key>Headers/fanmeter_sdk_ios-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8MVptzgdYc/GsnN0IeBB7Po5SHJ9H9vyGLkgqRQZ7bg=
+			2F0kOgvO0azCtqPPCezO5VYV6jiYCpBldc2oV6Hn4TU=
 			</data>
 		</dict>
 		<key>Headers/fanmeter_sdk_ios.h</key>
@@ -175,7 +175,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ccuSQiBMELxM+M9XVY1eCZeOARiYEQ9UwISHTU9ndNY=
+			RzcGVb+5WJwAcoBqg1GUolGYI1FYpsKB1AxiTpZx/3E=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
@@ -189,7 +189,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			O/pYn/8S2WN+/Zx5nC851+5Kg9lyW7JMHlDl6mu/TVc=
+			e5DbolKZIMSbe288uHIbrb7J4xpQ7Jh5ryjViAPmgIM=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -210,7 +210,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XbhOXXu+Jyt11Wq/KB8Y7S1iDtAly4Khaaqg0REHHPE=
+			gyXy+UWrlEHXK7kIgSqcFgpHzG6MurxFYXfHK1t3eP4=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
@@ -224,7 +224,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iEWMw7I0map2I/NbNabMseBKKBvnv7FVXrAIS+kR95c=
+			Ppz+3vbuI6DIagpVY9vuAt38aCDqTkX5RB1lFynru2c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -238,7 +238,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YoaJH18PCEW1/o1GPX2LoX/6jIwsLapRJAAYgpe4cd8=
+			xFHj95igkzaLJ37LnBUr1rNv8MpGJO4Nnu0eQfo4Q/Q=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -247,7 +247,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			j2zCSVmBez3JfUfwZob/g5LiQf18vcIQhpYA1aEj6bc=
+			DbETUMMZO70Fb1ik0wX43zDzSSQ+toElZU4a6Gn4+WI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -256,7 +256,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2mUdQRAVPRn3gwddHRqoIyjZSxkb0hsBKAzQnQxiIV8=
+			pzVS8K4Ig3deJPCkhC0gNx0C4a6YwSxMhwtaL2O2mRk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -265,7 +265,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZeMyiTXaVRoqBTq0sZEjPhqBQCEx+ABpOUsAR5imh3Y=
+			vckI8Su/ncMJxPjWJjjGx2nmbjIszGSQGD+VCvwWnlU=
 			</data>
 			<key>optional</key>
 			<true/>
