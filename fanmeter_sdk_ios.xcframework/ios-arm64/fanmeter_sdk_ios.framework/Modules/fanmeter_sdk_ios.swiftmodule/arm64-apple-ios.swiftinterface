@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name fanmeter_sdk_ios
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name fanmeter_sdk_ios
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Combine
 import CommonCrypto
 import CoreMotion
@@ -11,35 +11,65 @@ import Foundation
 import SQLite3
 import Swift
 import SwiftUI
+import SystemConfiguration
 import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import _WebKit_SwiftUI
 @_exported import fanmeter_sdk_ios
 import os
 @_hasMissingDesignatedInitializers public class EntryPoint {
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func initialize(companyName: Swift.String, companyKey: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String? = nil, fcmToken: Swift.String? = nil, ticketNumber: Swift.String? = nil, ticketStand: Swift.String? = nil, urlRegulation: Swift.String? = nil, log: Swift.Bool? = nil) -> Swift.Int
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func execute(notificationData: [Swift.AnyHashable : Any], callback: ((Swift.Int) -> ())? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func launchFanmeterView(eventId: Swift.Int? = nil, callback: ((Swift.Int) -> ())? = nil)
+  #endif
   public class func isServiceRunning(callback: (Swift.Int) -> ())
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func startService(eventId: Swift.Int, callback: ((Swift.Int) -> ())? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func stopService(callback: ((Swift.Int) -> ())? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func getEventData(eventTitle: Swift.String? = nil, callback: (([Swift.String : Any]) -> ())? = nil)
+  #endif
   public class func subscribeUserParticipationListener(eventId: Swift.Int, callback: @escaping (Swift.Int) -> ())
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func unsubscribeUserParticipationListener(eventId: Swift.Int? = nil, callback: ((Swift.Int) -> ())? = nil)
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class EntryPointBridge : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func initialize(companyName: Swift.String, companyKey: Swift.String, externalUserId: Swift.String, externalTokenId: Swift.String, externalUserEmail: Swift.String? = nil, fcmToken: Swift.String? = nil, ticketNumber: Swift.String? = nil, ticketStand: Swift.String? = nil, urlRegulation: Swift.String? = nil, log: Foundation.NSNumber? = nil) -> Swift.Int
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func execute(notificationData: [Swift.AnyHashable : Any], callback: ((Swift.Int) -> ())? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func launchFanmeterView(eventId: Foundation.NSNumber? = nil, callback: ((Swift.Int) -> ())? = nil)
+  #endif
   @objc public class func isServiceRunning(callback: (Swift.Int) -> ())
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func startService(eventId: Foundation.NSNumber, callback: ((Swift.Int) -> ())? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func stopService(callback: ((Swift.Int) -> ())? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func getEventData(eventTitle: Swift.String? = nil, callback: (([Swift.String : Any]) -> ())? = nil)
+  #endif
   @objc public class func subscribeUserParticipationListener(eventId: Foundation.NSNumber, callback: @escaping (Swift.Int) -> ())
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func unsubscribeUserParticipationListener(eventId: Foundation.NSNumber? = nil, callback: ((Swift.Int) -> ())? = nil)
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -47,7 +77,7 @@ import os
   public static var shared: fanmeter_sdk_ios.SensorFeedHandler
   @objc override dynamic public init()
   @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
-  @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [_LocationEssentials.CLLocation])
   @objc public func locationManagerDidPauseLocationUpdates(_ manager: CoreLocation.CLLocationManager)
   @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
   @objc deinit

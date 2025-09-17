@@ -6,10 +6,10 @@ Pod::Spec.new do |spec|
   spec.author       = { "PluggableAI" => "info@pluggableai.pt" }
   spec.platform     = :ios, "13.0"
 
-  spec.version      = "4.3.0-beta.1"
-  spec.license      = { :type => 'Custom', :file => 'fanmeter-sdk-ios-pod-4.3.0-beta.1/LICENSE' }
-  spec.source       = { :http => 'https://github.com/pluggableai/fanmeter-sdk-ios-pod/archive/refs/tags/4.3.0-beta.1.zip' }
-  spec.vendored_frameworks = 'fanmeter-sdk-ios-pod-4.3.0-beta.1/fanmeter_sdk_ios.xcframework'
+  spec.version      = "4.3.2"
+  spec.license      = { :type => 'Custom', :file => 'fanmeter-sdk-ios-pod-4.3.2/LICENSE' }
+  spec.source       = { :http => 'https://github.com/pluggableai/fanmeter-sdk-ios-pod/archive/refs/tags/4.3.2.zip' }
+  spec.vendored_frameworks = 'fanmeter-sdk-ios-pod-4.3.2/fanmeter_sdk_ios.xcframework'
 
   spec.requires_arc = true
 end
