@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/fanmeter_sdk_ios-Swift.h</key>
 		<data>
-		odGYd2Y/tRwEwgDMMHDVv3SIG6A=
+		X0E0oZXNLZfjpRE+jlBCr/Fq408=
 		</data>
 		<key>Headers/fanmeter_sdk_ios.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LaVeFlRcE4TZQ/BeZ613k4MYWeA=
+		m6Tpe4qdP6OuPjX9l3N/hvOIej0=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		sqvHl5i3bh4xPfh69n+CU4Cdf2g=
+		y0liZOKAB0wxp39KXgp8iMG+veI=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		aQQxPi2Ixkd0/MNwQqdLY4F3P4U=
+		ulvr9ZqLU2EIGCHcj2ZE4kEHMOc=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		sqvHl5i3bh4xPfh69n+CU4Cdf2g=
+		y0liZOKAB0wxp39KXgp8iMG+veI=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		L9YlFHMqPbEqaYm25b1VHqrfYo0=
+		saB7XeQLoA1R88kMECfeCqLMde8=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -46,19 +46,19 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		nyKfqCEVx/LfMkywFj+xXFdQ1+c=
+		Rv5rQwhNvgetwN0mEwgqjCVwgAY=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		GpXqL/5fui/0WwVoY7ZPSWY0zZU=
+		PKG9eS6odl/SMNiszqW1nSf4kUM=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		nyKfqCEVx/LfMkywFj+xXFdQ1+c=
+		Rv5rQwhNvgetwN0mEwgqjCVwgAY=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0eAWmz/ytlFAKkNMeQUZvPOIk+g=
+		AeHieAqPeC6S393dE7BP2FFMGGQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -114,7 +114,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z+FmdxaFQJxh8aJvmAuO7uNSS+8gT4NmHKrNXNSgKzw=
+			B4mc+N3czKvIE86sA4dlpGj7n0ALhLAizvtjPakXfno=
 			</data>
 		</dict>
 		<key>Headers/fanmeter_sdk_ios.h</key>
@@ -135,28 +135,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6phg1KnKrEqPG04xkhfAgEAUBOrXtUqdxMEUEmw0OT0=
+			PWEgYiT+UJlfkh4t/0kVLywbAJVJbT9NLB+O3O9EqeU=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S4yCIxRDUPpriVfgEaxgDuYd2/ywQfLqsOSNGM1+wVQ=
+			crY4sJliw8rFwdgrsQnAxS25qZsVFBT18FWldVcInvU=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6phg1KnKrEqPG04xkhfAgEAUBOrXtUqdxMEUEmw0OT0=
+			PWEgYiT+UJlfkh4t/0kVLywbAJVJbT9NLB+O3O9EqeU=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tJe0HtS1s2utOyVTCOkWz7Pu6Ru6TVRUnW3FmBivJ34=
+			JncYjryUOnr/y7pMrID8UxLDlAXx+QYdlaFpI5TNI9o=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -170,28 +170,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2w0R0aPjyuYYvUsoAO77w950s1rUvUHKB2mbhbIe4U8=
+			CLNRYysSuyAXf9e+1KwmYYG35DPfU5yz5L+n5114EsI=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aDuZIrPHl+Oi5JT9oLj4H3ctFd3Fj5jekfoi+eHCMcI=
+			pE4Vru2sAcGiY6d6JkTptkMWOiNQHMaqJGnIlX8ul/g=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2w0R0aPjyuYYvUsoAO77w950s1rUvUHKB2mbhbIe4U8=
+			CLNRYysSuyAXf9e+1KwmYYG35DPfU5yz5L+n5114EsI=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			74FHAURQb2ebqtlJ9ttM5igrURnJmrNyvraFEPwpnlQ=
+			HKCr3OmgGEX+MYZhdwMzKTlOBAbr6W1+nD9yn/IJIWc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -284,6 +284,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
+@import WebKit;
 #endif
 
 #endif
@@ -349,7 +350,7 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 ///     -72: Invalid Regulation URL format.
 ///   </li>
 /// </ul>
-+ (NSInteger)initializeWithCompanyName:(NSString * _Nonnull)companyName companyKey:(NSString * _Nonnull)companyKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand urlRegulation:(NSString * _Nullable)urlRegulation log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
++ (void)initializeWithInitializeDataMap:(NSDictionary<NSString *, NSString *> * _Nonnull)initializeDataMap log:(NSNumber * _Nullable)log callback:(void (^ _Nonnull)(NSString * _Nullable))callback;
 /// Async entry point to launch Fanmeter native’s view, when a Fanmeter notification is clicked.     *
 /// Used for a fully-automatized implementation of Fanmeter if, and only if, using Fanmeter push notifications.
 /// \param notificationData a map containing data coming from the notification.
@@ -576,6 +577,18 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 ///   </li>
 /// </ul>
 + (void)unsubscribeUserParticipationListenerWithEventId:(NSNumber * _Nullable)eventId callback:(void (^ _Nullable)(NSInteger))callback;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class WKUserContentController;
+@class WKScriptMessage;
+/// Provides a JavaScript bridge between the Fanzone web app and the Fanmeter iOS SDK.
+/// Exposes <code>window.FanmeterBridge</code> in the WebView, allowing the web layer to invoke
+/// native SDK methods without platform-specific logic on the JavaScript side.
+SWIFT_CLASS("_TtC16fanmeter_sdk_ios20FanmeterWebInterface")
+@interface FanmeterWebInterface : NSObject <WKScriptMessageHandler>
+/// Handles messages posted from JavaScript via <code>window.FanmeterBridge.*</code>.
+- (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -892,6 +905,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
+@import WebKit;
 #endif
 
 #endif
@@ -957,7 +971,7 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 ///     -72: Invalid Regulation URL format.
 ///   </li>
 /// </ul>
-+ (NSInteger)initializeWithCompanyName:(NSString * _Nonnull)companyName companyKey:(NSString * _Nonnull)companyKey externalUserId:(NSString * _Nonnull)externalUserId externalTokenId:(NSString * _Nonnull)externalTokenId externalUserEmail:(NSString * _Nullable)externalUserEmail fcmToken:(NSString * _Nullable)fcmToken ticketNumber:(NSString * _Nullable)ticketNumber ticketStand:(NSString * _Nullable)ticketStand urlRegulation:(NSString * _Nullable)urlRegulation log:(NSNumber * _Nullable)log SWIFT_WARN_UNUSED_RESULT;
++ (void)initializeWithInitializeDataMap:(NSDictionary<NSString *, NSString *> * _Nonnull)initializeDataMap log:(NSNumber * _Nullable)log callback:(void (^ _Nonnull)(NSString * _Nullable))callback;
 /// Async entry point to launch Fanmeter native’s view, when a Fanmeter notification is clicked.     *
 /// Used for a fully-automatized implementation of Fanmeter if, and only if, using Fanmeter push notifications.
 /// \param notificationData a map containing data coming from the notification.
@@ -1184,6 +1198,18 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 ///   </li>
 /// </ul>
 + (void)unsubscribeUserParticipationListenerWithEventId:(NSNumber * _Nullable)eventId callback:(void (^ _Nullable)(NSInteger))callback;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class WKUserContentController;
+@class WKScriptMessage;
+/// Provides a JavaScript bridge between the Fanzone web app and the Fanmeter iOS SDK.
+/// Exposes <code>window.FanmeterBridge</code> in the WebView, allowing the web layer to invoke
+/// native SDK methods without platform-specific logic on the JavaScript side.
+SWIFT_CLASS("_TtC16fanmeter_sdk_ios20FanmeterWebInterface")
+@interface FanmeterWebInterface : NSObject <WKScriptMessageHandler>
+/// Handles messages posted from JavaScript via <code>window.FanmeterBridge.*</code>.
+- (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
