@@ -4,13 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Assets.car</key>
-		<data>
-		NyLAEKB7eqRyatHbBtuum1s/Ti4=
-		</data>
 		<key>Headers/fanmeter_sdk_ios-Swift.h</key>
 		<data>
-		X0E0oZXNLZfjpRE+jlBCr/Fq408=
+		FeBDMssN5MaouWIMFPtQpqNGOPY=
 		</data>
 		<key>Headers/fanmeter_sdk_ios.h</key>
 		<data>
@@ -18,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		m6Tpe4qdP6OuPjX9l3N/hvOIej0=
+		vYkU0xZCyQmvf87LCTfJnKOrApQ=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -26,19 +22,19 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		y0liZOKAB0wxp39KXgp8iMG+veI=
+		2FNif1G9u2iDz9TeFqrlDKjpHp0=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ulvr9ZqLU2EIGCHcj2ZE4kEHMOc=
+		Vn8WFuu2XgwD+eMqYCTJOLx7R9s=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		y0liZOKAB0wxp39KXgp8iMG+veI=
+		2FNif1G9u2iDz9TeFqrlDKjpHp0=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		saB7XeQLoA1R88kMECfeCqLMde8=
+		FQfaQx6qNwohtB46wUZgmiXjhK4=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -46,19 +42,19 @@
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Rv5rQwhNvgetwN0mEwgqjCVwgAY=
+		febfzh/EIG8g8vQct8r1rcZv+ms=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		PKG9eS6odl/SMNiszqW1nSf4kUM=
+		rOnGHtFaJEgxApY4QMELUD48iXc=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Rv5rQwhNvgetwN0mEwgqjCVwgAY=
+		febfzh/EIG8g8vQct8r1rcZv+ms=
 		</data>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		AeHieAqPeC6S393dE7BP2FFMGGQ=
+		ma5D79asyKt/41lf+fBZRxsxRug=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -68,7 +64,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ChUOxZyRFDj5KxffW1JbVSsYBGk=
+			l45ZwRu1dQp5JYxfZD/gvh1tZJY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -77,7 +73,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NhG3Ip255Ojg+efPrnfKMlHQCMs=
+			ZfR3w9V3mef5qaLE+Fx70Pmz9eg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -86,7 +82,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KlAaf5SKPfiUsVWALVk9aLfat0E=
+			MZ6UguxL+wdvUT/WVE4aZBUyLEQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -95,7 +91,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TL7AEAwFjD2UQfhUKnX4HFAgRDE=
+			t1UrZh/Cim9Bnq/oG3P+cV6lczU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -103,18 +99,11 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Assets.car</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			7OpSuMTBTGnl1P1IiwHOYsSaWkouy/I7hakXb94l/BE=
-			</data>
-		</dict>
 		<key>Headers/fanmeter_sdk_ios-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B4mc+N3czKvIE86sA4dlpGj7n0ALhLAizvtjPakXfno=
+			MQuGANe/Um2rO3zKNvGHpslKIoWl87z18dA2Z1YHcxY=
 			</data>
 		</dict>
 		<key>Headers/fanmeter_sdk_ios.h</key>
@@ -135,28 +124,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PWEgYiT+UJlfkh4t/0kVLywbAJVJbT9NLB+O3O9EqeU=
+			NLNUzo8bgoOqj3B6DuK3AMrAv/9ZQoHG/v2MaXzMIm0=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			crY4sJliw8rFwdgrsQnAxS25qZsVFBT18FWldVcInvU=
+			cjqo/HhGWoC/7C+gOk5MU7LIpqx0FNuCAyTdJY1C/u0=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PWEgYiT+UJlfkh4t/0kVLywbAJVJbT9NLB+O3O9EqeU=
+			NLNUzo8bgoOqj3B6DuK3AMrAv/9ZQoHG/v2MaXzMIm0=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JncYjryUOnr/y7pMrID8UxLDlAXx+QYdlaFpI5TNI9o=
+			nflYrlaxEl+nwth1zmh2c4MF7KQTg16iCtmxD3ttVyo=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -170,28 +159,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CLNRYysSuyAXf9e+1KwmYYG35DPfU5yz5L+n5114EsI=
+			qA7Ta5XZaGPLKV91y2mr1WuDbmHk0oP8KvffqdCxDnk=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pE4Vru2sAcGiY6d6JkTptkMWOiNQHMaqJGnIlX8ul/g=
+			OXSAHezet/zzxw4Y2yEJQ96MKJ4pgIJXQMdVXSm1PU0=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CLNRYysSuyAXf9e+1KwmYYG35DPfU5yz5L+n5114EsI=
+			qA7Ta5XZaGPLKV91y2mr1WuDbmHk0oP8KvffqdCxDnk=
 			</data>
 		</dict>
 		<key>Modules/fanmeter_sdk_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HKCr3OmgGEX+MYZhdwMzKTlOBAbr6W1+nD9yn/IJIWc=
+			T7knfYzsUjUl/LVu5GINjD4iOJiQ34MEsO08kztxGVM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -205,7 +194,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FTPJKciyQcRNVGoIJKnZ/QOmWERUYl2WZYWmbQ3+mmg=
+			vkAtNzxefHTkTtI1+MU8SCIOd2FG87wuC6ChgmWM0ag=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -214,7 +203,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w9qnlYJSssTtEwui7VtItUOEMFjwtPIZ88zEry/dkws=
+			agd4peqUTGV+C+N3xoTIGamJcJ3jscE2mM5tSnN5H2g=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -223,7 +212,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZoLgMJzLzIEFbuhSwd4jZ3iXxWqoOXcbgwBm2xexsCI=
+			6/BOo7NdL+90MyGCv8b8MTWmDyIGFW0vaEYYts2f2/w=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -232,7 +221,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ICvQMLgDpmqs05L0hio/7NYnqLafIhNd4+w17FkuQX4=
+			jatlIm4gL1t4fr4738Tl1sk9p75TN+RsJC4HqIJPMOs=
 			</data>
 			<key>optional</key>
 			<true/>

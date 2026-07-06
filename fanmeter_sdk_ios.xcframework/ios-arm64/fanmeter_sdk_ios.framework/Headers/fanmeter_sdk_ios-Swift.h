@@ -313,150 +313,40 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 @interface EntryPointBridge : NSObject
 /// API async entry point to initialize the SDK.
-/// \param companyName the exact name of the company in Pluggable’s platform.
-///
-/// \param companyKey the company key of the company requesting to use the SDK.
-///
-/// \param externalUserId the user’s identifier in the company’s db (can be the username, the uuid, …).
-///
-/// \param externalTokenId the individual smartphone identifier (allows for same accounts in different devices).
-///
-/// \param externalUserEmail the user’s email (optional).
-///
-/// \param fcmToken the FCM token id (optional).
-///
-/// \param ticketNumber the ticket number of the user (optional).
-///
-/// \param ticketStand the stand where the user is (optional).
-///
-/// \param urlRegulation the url to redirect to a web page containing a regulation of participation (optional).
+/// \param initializeDataMap map containing initialization data. Required keys:
+/// <ul>
+///   <li>
+///     “companyName”: the exact company name in Pluggable’s platform.
+///   </li>
+///   <li>
+///     “companyKey”: the company key requesting to use the SDK.
+///   </li>
+///   <li>
+///     “externalUserId”: the user’s unique identifier in the company’s db.
+///   </li>
+///   <li>
+///     “externalTokenId”: the individual smartphone identifier (allows same account on different devices).
+///     Optional keys:
+///   </li>
+///   <li>
+///     “username”: the user’s name.
+///   </li>
+///   <li>
+///     “externalUserEmail”: the user’s email.
+///   </li>
+///   <li>
+///     “fcmToken”: the device’s FCM token.
+///   </li>
+/// </ul>
 ///
 /// \param log enable additional logging (optional).
 ///
-///
-/// returns:
-/// callback returns:
-/// <ul>
-///   <li>
-///     1: Success;
-///   </li>
-///   <li>
-///     -70: Invalid parameters used;
-///   </li>
-///   <li>
-///     -71: Invalid database access;
-///   </li>
-///   <li>
-///     -72: Invalid Regulation URL format.
-///   </li>
-/// </ul>
-+ (void)initializeWithInitializeDataMap:(NSDictionary<NSString *, NSString *> * _Nonnull)initializeDataMap log:(NSNumber * _Nullable)log callback:(void (^ _Nonnull)(NSString * _Nullable))callback;
-/// Async entry point to launch Fanmeter native’s view, when a Fanmeter notification is clicked.     *
-/// Used for a fully-automatized implementation of Fanmeter if, and only if, using Fanmeter push notifications.
-/// \param notificationData a map containing data coming from the notification.
-///
-/// \param callback the callback where the results are returned (optional).
-///
-///
-/// returns:
-/// callback returns:
-/// <ul>
-///   <li>
-///     1: Success;
-///   </li>
-///   <li>
-///     -80: No GPS/PUSH Permissions;
-///   </li>
-///   <li>
-///     -81: GPS Disabled;
-///   </li>
-///   <li>
-///     -82: Invalid event coordinates;
-///   </li>
-///   <li>
-///     -89: SDK not initialized;
-///   </li>
-///   <li>
-///     -91: Invalid notification data;
-///   </li>
-///   <li>
-///     -92: Invalid Company license key;
-///   </li>
-///   <li>
-///     -93: Invalid Event;
-///   </li>
-///   <li>
-///     -94: Event not happening now;
-///   </li>
-///   <li>
-///     -95: Invalid external user data;
-///   </li>
-///   <li>
-///     -96: Failed to get event data;
-///   </li>
-///   <li>
-///     -97: Failed to start the Fanmeter service.
-///   </li>
-/// </ul>
-+ (void)executeWithNotificationData:(NSDictionary * _Nonnull)notificationData callback:(void (^ _Nullable)(NSInteger))callback;
-/// Entry point that launches Fanmeter native’s view.
-/// If [eventId] is null, get the closest available event to the current date.
-/// Used for a fully-automatized implementation of Fanmeter.
-/// \param eventId the id of the event in Pluggable’s platform (optional).
-///
-/// \param callback the callback where the results are returned (optional).
-///
-///
-/// returns:
-/// callback returns:
-/// <ul>
-///   <li>
-///     1: Success;
-///   </li>
-///   <li>
-///     -80: No GPS/PUSH Permissions;
-///   </li>
-///   <li>
-///     -81: GPS Disabled;
-///   </li>
-///   <li>
-///     -82: Invalid event coordinates;
-///   </li>
-///   <li>
-///     -89: SDK not initialized;
-///   </li>
-///   <li>
-///     -92: Invalid Company license key;
-///   </li>
-///   <li>
-///     -93: Invalid Event;
-///   </li>
-///   <li>
-///     -94: Event not happening now;
-///   </li>
-///   <li>
-///     -95: Invalid external user data;
-///   </li>
-///   <li>
-///     -96: Failed to get event data;
-///   </li>
-///   <li>
-///     -97: Failed to start the Fanmeter service.
-///   </li>
-/// </ul>
-+ (void)launchFanmeterViewWithEventId:(NSNumber * _Nullable)eventId callback:(void (^ _Nullable)(NSInteger))callback;
-/// Async entry point to check if the Fanmeter service is running.
 /// \param callback the callback where the results are returned.
 ///
 ///
 /// returns:
-/// callback returns:
-/// <ul>
-///   <li>
-///     1: callback returns 1 (true), if service is running; 0 (false), otherwise.
-///   </li>
-/// </ul>
-+ (void)isServiceRunningWithCallback:(SWIFT_NOESCAPE void (^ _Nonnull)(NSInteger))callback;
+/// callback returns the auth token if initialization is successful; null otherwise.
++ (void)initializeWithInitializeDataMap:(NSDictionary<NSString *, NSString *> * _Nonnull)initializeDataMap log:(NSNumber * _Nullable)log callback:(void (^ _Nonnull)(NSString * _Nullable))callback;
 /// Async entry point that starts the Fanmeter service for an event with a given [eventTitle].
 /// \param eventId the event id as it was created in Pluggable’s platform.
 ///
@@ -585,6 +475,21 @@ SWIFT_CLASS("_TtC16fanmeter_sdk_ios16EntryPointBridge")
 /// Provides a JavaScript bridge between the Fanzone web app and the Fanmeter iOS SDK.
 /// Exposes <code>window.FanmeterBridge</code> in the WebView, allowing the web layer to invoke
 /// native SDK methods without platform-specific logic on the JavaScript side.
+/// Callbacks fired into the web layer:
+/// <ul>
+///   <li>
+///     <code>window.onServiceRunningStatus(running, eventId)</code> — response to <code>isServiceRunning</code>; <code>eventId</code> is non-null only when <code>running</code> is true.
+///   </li>
+///   <li>
+///     <code>window.onSdkStateChange(state)</code> — result code after <code>startService</code> / <code>stopService</code>.
+///   </li>
+///   <li>
+///     <code>window.onServiceStopped()</code> — service stopped unexpectedly (e.g. GPS paused by OS).
+///   </li>
+///   <li>
+///     <code>window.onEventMessage(message)</code> — GPS participation status message.
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC16fanmeter_sdk_ios20FanmeterWebInterface")
 @interface FanmeterWebInterface : NSObject <WKScriptMessageHandler>
 /// Handles messages posted from JavaScript via <code>window.FanmeterBridge.*</code>.
