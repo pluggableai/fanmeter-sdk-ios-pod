@@ -71,6 +71,10 @@ import os
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class FanmeterWebInterface : ObjectiveC.NSObject, WebKit.WKScriptMessageHandler {
   @objc deinit
   @_Concurrency.MainActor @preconcurrency public static func makeWebView() -> WebKit.WKWebView
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  @_Concurrency.MainActor @preconcurrency public static func attach(to webView: WebKit.WKWebView, onClose: (() -> Swift.Void)? = nil) -> fanmeter_sdk_ios.FanmeterWebInterface
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init()
 }
