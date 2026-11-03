@@ -4,12 +4,12 @@ Pod::Spec.new do |spec|
   spec.description  = "A native framework to handle Fanmeter events."
   spec.homepage     = "https://www.pluggableai.pt/"
   spec.author       = { "PluggableAI" => "info@pluggableai.pt" }
-  spec.platform     = :ios, "13.0"
+  spec.platform     = :ios, "15.0"
 
-  spec.version      = "5.0.1"
-  spec.license      = { :type => 'Custom', :file => 'fanmeter-sdk-ios-pod-5.0.1/LICENSE' }
-  spec.source       = { :http => 'https://github.com/pluggableai/fanmeter-sdk-ios-pod/archive/refs/tags/5.0.1.zip' }
-  spec.vendored_frameworks = 'fanmeter-sdk-ios-pod-5.0.1/fanmeter_sdk_ios.xcframework'
+  spec.version      = "5.1.0"
+  spec.license      = { :type => 'Custom', :file => 'fanmeter-sdk-ios-pod-5.1.0/LICENSE' }
+  spec.source       = { :http => 'https://github.com/pluggableai/fanmeter-sdk-ios-pod/archive/refs/tags/5.1.0.zip' }
+  spec.vendored_frameworks = 'fanmeter-sdk-ios-pod-5.1.0/fanmeter_sdk_ios.xcframework'
 
   spec.requires_arc = true
 end

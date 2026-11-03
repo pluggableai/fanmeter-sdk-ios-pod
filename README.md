@@ -1,4 +1,16 @@
-Usage example:
+Swift Package Manager usage example (Xcode: File > Add Package Dependencies...):
+
+```
+https://github.com/pluggableai/fanmeter-sdk-ios-pod
+```
+
+Or in `Package.swift`:
+
+```
+.package(url: "https://github.com/pluggableai/fanmeter-sdk-ios-pod", from: "5.1.0")
+```
+
+Or in CocoaPods:
 
 ```
 target 'YOUR-APP' do
@@ -6,7 +18,7 @@ target 'YOUR-APP' do
   use_frameworks!
 
   # Pods for fanmeter-ios-testapp
-  pod 'fanmeter_sdk_ios', '~> 5.0.1'
+  pod 'fanmeter_sdk_ios', '~> 5.1.0'
 
 end
 ```

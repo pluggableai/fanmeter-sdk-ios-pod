@@ -7,5 +7,4 @@ framework module fanmeter_sdk_ios {
 
 module fanmeter_sdk_ios.Swift {
   header "fanmeter_sdk_ios-Swift.h"
-  requires objc
 }
